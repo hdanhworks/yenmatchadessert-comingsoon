@@ -1,0 +1,63 @@
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inknut Antiqua', serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #2f3e46;
+    overflow: hidden;
+}
+  
+  /* Nền ảnh + làm mờ */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("./background.jpeg"); /* Thay bằng URL ảnh bạn muốn */
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -2;
+  }
+  
+  /* Lớp phủ trắng mờ để dễ đọc nội dung */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(255, 255, 255, 0.36); /* 0.6 = mờ vừa phải */
+    z-index: -1;
+  }
+  
+  /* Nội dung chính */
+  .container {
+    max-width: 600px;
+    padding: 100px;
+    background: #c4b6997d;
+    border-radius: 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  .brand {
+    font-size: 2rem;
+    padding: 0px;
+    color: #573f14;
+    margin-bottom: 0.5em;
+  }
+  
+  .headline {
+    font-size: 2.5rem;
+    color: #573f14;
+    margin-bottom: 0.25em;
+  }
+  
+  .tagline {
+    font-style: italic;
+    color: #573f14;
+    margin-bottom: 1.5em;
+  }
+  
